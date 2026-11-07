@@ -1,0 +1,8 @@
+{
+  "name": "苹果味汽水音乐",
+  "description": "A high-fidelity, immersive music player inspired by Apple Music. Features fluid animations, multi-language synchronized lyrics (original + translation), word-level timing support, and Gemini-powered song analysis.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
