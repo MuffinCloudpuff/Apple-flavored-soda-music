@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+<img id="img" src="/api/bilibili/proxy?url=https%3A%2F%2Fi1.hdslb.com%2Fbfs%2Farchive%2Fb5b93284fd5ddcde5d46b4ead37cbfbc4a037606.jpg" crossorigin="anonymous">
+<canvas id="canvas"></canvas>
+<script>
+    const img = document.getElementById('img');
+    const canvas = document.getElementById('canvas');
+    img.onload = () => {
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0);
+        try {
+            const data = ctx.getImageData(0, 0, 1, 1);
+            console.log("SUCCESS! ", data.data);
+            document.body.innerHTML += "<p>SUCCESS</p>";
+        } catch (e) {
+            console.error(e);
+            document.body.innerHTML += "<p>FAIL: " + e.message + "</p>";
+        }
+    }
+</script>
+</body>
+</html>
